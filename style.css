@@ -1,0 +1,249 @@
+@import url('/dist/css/style.css');
+
+@font-face {
+    font-family: "FredokaOne";
+    src: url("fonts/FredokaOne-Regular.ttf");
+}
+
+@keyframes Bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-100%);
+    }
+}
+
+
+* {
+    font-size: 2vmax;
+    font-family: FredokaOne;
+}
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(9, 15vmin);
+    transform: rotate(-45deg) skew(10deg, 10deg);
+    width: fit-content;
+    margin: 40% 70%;
+}
+
+.bat-img {
+    width: 15vmin;
+    height: 20vmin;
+    transform: rotate(45deg) skew(0deg, 0deg) translate(-10px, -20px);
+}
+
+.grid-container>div {
+    width: 15vmin;
+    height: 15vmin;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
+
+.button-open-menu {
+    z-index: 99;
+    border: black solid;
+    border-radius: 10px;
+    background-color: orange;
+    height: 10vh;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+
+.button {
+    z-index: 99;
+    border: black solid;
+    border-radius: 10px;
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 0 0 calc(30% - 10px);
+    width: fit-content;
+    padding: 10px;
+    margin: 10px 10px;
+}
+
+
+.icon {
+    font-size: 7vmin;
+}
+
+.menu {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -60%);
+    position: fixed;
+    z-index: 999;
+    border: black solid;
+    width: 70vw;
+    height: 60vh;
+    background-color: gray;
+    display: none;
+    
+}
+
+#menu-button {
+    width: 10%;
+}
+
+#close-menu {
+    position: fixed;
+    z-index: 998;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+}
+
+#dialog-pass {
+    border-radius: 10px;
+    padding: 20px 10px;
+    width: 80%;
+    height: 10vh;
+    position: fixed;
+    left: 0;
+    display: none;
+}
+
+#arrow-pass {
+    height: 0;
+    width: 0;
+    border-top: 1.33vw solid black;
+    border-right: 0.67vw solid transparent;
+    border-left: 0.67vw solid transparent;
+    position: relative;
+    right: -78vw;
+    bottom: -8vh;
+    animation: Bounce 1s infinite;
+    display: none;
+}
+
+
+#on-placing {
+    width: 15vmin;
+    height: 15vmin;
+    z-index: 999;
+    position: absolute;
+    display: none;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+
+}
+
+#on-placing>img {
+    width: 18vmin;
+    height: 18vmin;
+    transform: scale(1);
+    transform-origin: 0% 0% 0px;
+}
+
+.dragscroll {
+    width: 100vw;
+    overflow: auto;
+    height: 100vh;
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.dragscroll::-webkit-scrollbar {
+    display: none;
+}
+
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    background-color: lightgrey;
+}
+
+
+main {
+    position: relative;
+    left: -10px;
+    top: -10px;
+}
+
+#dialog-box {
+    border: solid;
+    border-radius: 10px;
+    padding: 20px 10px;
+    width: 80%;
+    background-color: beige;
+    height: 10vh;
+}
+
+#bottom-section {
+    position: fixed;
+    display: flex;
+    width: 98%;
+    justify-content: space-around;
+    align-items: flex-end;
+    height: 20vh;
+    bottom: 0px;
+    left: 0px;
+    z-index: 998;
+    padding: 10px;
+}
+
+#top-section {
+    z-index: 998;
+    height: 5vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    padding: 10px;
+}
+
+#money {
+    width: 20vw;
+    height: 5vh;
+    border: solid;
+    position: fixed;
+    right: 10px;
+}
+
+#money-progress {
+    height: 5vh;
+    width: 0%;
+    background-color: green;
+}
+
+#money-number {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.grid-snake {
+    display: grid;
+    grid-template-columns: repeat(9, 5vmin);
+    width: fit-content;
+    border: solid;
+}
+
+
+.grid-snake>div {
+    width: 5vmin;
+    height: 5vmin;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+}
